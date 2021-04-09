@@ -12,7 +12,7 @@ var el_up = document.getElementById("UP");
 		}
     function change_col() { 
     
-    document.getElementById("demo").style.background = "yellow";
+    document.getElementById("UP").style.background = "yellow";
 
 }
 function myFunction() {

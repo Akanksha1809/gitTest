@@ -51,6 +51,12 @@ function add()
 		var x = String(document.getElementById('color').value);
 		var y = String(document.getElementById('count').value);
 		var z = String(document.getElementById('date').value);
+		if(data.length==5)
+		{
+			window.alert("No more fruits can be added please delete some fruits first");
+		}
+		else
+		{
 		console.log(w+x+y+z);
 		if(w==undefined)
 			w="Not provided";
@@ -63,11 +69,17 @@ function add()
 		let s = '{ "name": "'+w+'","color": "'+x+'","count": "'+y+'","expiry": "'+z+'"}';
 		obj = JSON.parse(s);
 		data.push(obj);
+		}
 		setTimeout(start(),10000);
 		
 }
 function del(x)
 {
+	console.log(data.length+" "+x);
+	if(x>=data.length)
+	{
+		window.alert("The selected card is already empty !.");
+	}
 	data.splice(x,1);
 	console.log(data);
 	setTimeout(start(),10000);
